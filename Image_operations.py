@@ -26,8 +26,10 @@ cv2.polylines(img, [pts], True, (0,255,255),3)
 #Writing on the image
 font = cv2.FONT_HERSHEY_SIMPLEX #defining the font
 #writing the text on image with cv2.putText( image, 'TEXT', co-ordinates, font, size, color, word_thickness, Attempted anti-aliasing)
-cv2.putText(img, 'OpenCV Tuts',(512,512),font, 1, (200,255,255), 2, cv2.LINE_AA)
-
-cv2.imshow('image',img)
+half_img = cv2.resize(img, (0, 0), fx = 0.15, fy = 0.15)
+cv2.putText(half_img, 'Antarip Giri Clicks',(600,590),font, 0.8, (200,255,255), 2, cv2.LINE_AA)
+print(half_img.shape[0])
+#cv2.imshow('image',img)
+cv2.imshow('half_image',half_img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
